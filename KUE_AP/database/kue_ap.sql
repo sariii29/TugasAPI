@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2022 at 02:23 PM
+-- Generation Time: Jan 08, 2023 at 12:49 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -29,25 +29,49 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `barang` (
   `id` int(11) NOT NULL,
-  `nama_kue` varchar(100) NOT NULL,
-  `harga` varchar(100) NOT NULL
+  `nama_kue` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `barang`
 --
 
-INSERT INTO `barang` (`id`, `nama_kue`, `harga`) VALUES
-(1, 'redvelvet', '55000'),
-(2, 'rainbow cake', '35000'),
-(3, 'kue lapis', '25000'),
-(4, 'bownis oreo ', '65000'),
-(5, 'roti tawar', '27000'),
-(6, 'bolu', '25000'),
-(7, 'tiramisu', '52000'),
-(8, 'choco lava', '15000'),
-(9, 'pancake', '25000'),
-(10, 'bolu gulung', '30000');
+INSERT INTO `barang` (`id`, `nama_kue`) VALUES
+(1, 'redvelvet'),
+(2, 'rainbow cake'),
+(3, 'kue lapis'),
+(4, 'bownis oreo '),
+(5, 'roti tawar'),
+(6, 'bolu'),
+(7, 'tiramisu'),
+(8, 'choco lava'),
+(9, 'pancake'),
+(10, 'bolu gulung'),
+(11, 'Ada'),
+(17, 'Bingka Kentang');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pelanggan`
+--
+
+CREATE TABLE `pelanggan` (
+  `nama` varchar(40) NOT NULL,
+  `alamat` varchar(50) NOT NULL,
+  `tanggal_beli` varchar(25) NOT NULL,
+  `barang_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `pelanggan`
+--
+
+INSERT INTO `pelanggan` (`nama`, `alamat`, `tanggal_beli`, `barang_id`) VALUES
+('Ayub', 'Banjarbaru', '1 Januari 2023', 1002),
+('Najmiin', 'Martapura', '4 Desember 2022', 1004),
+('Nur Sari', 'Martapura', '8 Januari 2023', 1001),
+('Rahmah', 'Banjarmasin', '13 Febuari 2022', 1003);
 
 --
 -- Indexes for dumped tables
@@ -60,6 +84,12 @@ ALTER TABLE `barang`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `pelanggan`
+--
+ALTER TABLE `pelanggan`
+  ADD PRIMARY KEY (`nama`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -67,7 +97,7 @@ ALTER TABLE `barang`
 -- AUTO_INCREMENT for table `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
