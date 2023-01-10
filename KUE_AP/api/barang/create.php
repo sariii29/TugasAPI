@@ -9,12 +9,11 @@ include "../../database/database.php";
 
 $data = json_decode(file_get_contents("php://input"));
 $nama_kue = $data->$nama_kue;
-$harga = $data->harga;
 
 $hasil["create success"] = false;
 $hasil["data"] = array();
 
-$insert_sql = "INSERT INTO barang VALUES (NULL,'$nama_barang','$harga')";
+$insert_sql = "INSERT INTO barang VALUES (NULL,'$nama_barang')";
 $result = mysqli_query($connection,$insert_sql);
 if($result){
     $hasil["create success"] = true;

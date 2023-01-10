@@ -10,13 +10,12 @@ include "../../database/database.php";
 
 $data = json_decode(file_get_contents("php://input"));
 $nama_kue = $data->$nama_kue;
-$harga = $data->harga;
 $id = $data->id;
 
 $hasil["update success"] = false;
 $hasil["data"] = array();
 
-$update_sql = "UPDATE barang SET nama_kue='$nama_kue', harga='$harga' where id=$id";
+$update_sql = "UPDATE barang SET nama_kue='$nama_kue' where id=$id";
 $result = mysqli_query($connection,$update_sql);
 if($result){
     $hasil["update success"] = true;

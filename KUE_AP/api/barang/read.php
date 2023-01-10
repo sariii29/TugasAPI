@@ -15,7 +15,6 @@ while ($row = mysqli_fetch_assoc($result)){
     $array_berkas = array(
         "id" => $row["id"],
         "nama_kue" => $row["nama_kue"],
-        "harga" => $row["harga"]
     );
     array_push($hasil["data"],$array_berkas);
 }
